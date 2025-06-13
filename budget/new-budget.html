@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Budget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- MDB UI Kit CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <!-- Toggle Button -->
+    <div class="toggle-btn" id="toggleBtn">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="./assets/logo.png" alt="Logo" />
+      </div>
+      <ul>
+        <li>
+          <a href="../index.html"
+            ><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a href="../orders/order-list.html"
+            ><i class="fas fa-box"></i><span>Orders</span></a
+          >
+        </li>
+        <li>
+          <a href="./budget-list.html"
+            ><i class="fas fa-file-invoice-dollar"></i><span>Budget</span></a
+          >
+        </li>
+        <li>
+          <a href="../planning/planning-list.html"
+            ><i class="fas fa-palette"></i><span>Planning</span></a
+          >
+        </li>
+        <li>
+          <a href="./orders/order.html"
+            ><i class="fas fa-credit-card"></i><span>Billing</span></a
+          >
+        </li>
+        <li>
+          <a href="./logs/logs.html"
+            ><i class="fas fa-chart-line"></i><span>Reports</span></a
+          >
+        </li>
+        <li>
+          <a href="./roles/roles.html"
+            ><i class="fas fa-cogs"></i><span>Settings</span></a
+          >
+        </li>
+        <li class="has-submenu">
+          <a href="#" class="submenu-toggle">
+            <i class="fas fa-layer-group"></i><span>Masters</span
+            ><i class="fas fa-chevron-down arrow"></i>
+          </a>
+          <ul class="submenu">
+            <li>
+              <a href="./payment/payment.html"
+                ><i class="fas fa-ruler-combined"></i><span>Sizes</span></a
+              >
+            </li>
+            <li>
+              <a href="./payment/payment.html"
+                ><i class="fas fa-fill-drip"></i><span>Colors</span></a
+              >
+            </li>
+            <li>
+              <a href="./payment/payment.html"
+                ><i class="fas fa-user-tag"></i><span>Buyers</span></a
+              >
+            </li>
+            <li>
+              <a href="./payment/payment.html"
+                ><i class="fas fa-calendar-alt"></i><span>Seasons</span></a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main id="mainContent" class="main-content">
+      <div
+        id="mainHeader"
+        class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm"
+      >
+        <h4 class="fw-bold mb-0">New Budget</h4>
+        <div>
+          <i class="bi bi-bell fs-4 me-3"></i>
+          <i
+            id="profileIcon"
+            class="bi bi-person-circle fs-4"
+            style="cursor: pointer"
+          ></i>
+        </div>
+      </div>
+
+      <!-- Profile dropdown -->
+      <div class="position-fixed top-0 end-0 p-3">
+        <div class="position-relative d-inline-block">
+          <div
+            id="profileDropdown"
+            class="dropdown-menu shadow"
+            style="display: none; right: 0; top: 50px"
+          >
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-danger" href="#">Logout</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body content -->
+      <div class="container-fluid px-3">
+        <!-- Add New Budget Form -->
+        <div class="card shadow-sm rounded-4 mt-4">
+          <div class="card-body">
+            <h2 class="mb-4">Add New Budget</h2>
+            <form class="row g-4">
+              <div class="col-md-6">
+                <label for="orderNumber" class="form-label"
+                  >Order # <span class="text-danger">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="orderNumber"
+                  placeholder="Enter Order Number"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="styleSelect" class="form-label"
+                  >Buyer <span class="text-danger">*</span></label
+                >
+                <div class="d-flex gap-2">
+                  <select class="form-select" id="styleSelect">
+                    <option value="">Select Buyer</option>
+                    <option>Buyer 1</option>
+                    <option>Buyer 2</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-add"
+                    title="Add New Buyer"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="referenceNo" class="form-label">Reference no</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="referenceNo"
+                  placeholder="Enter reference no"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="buyerCode" class="form-label">Buyer Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="buyerCode"
+                  placeholder="Enter Buyer Code"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="styleSelect2" class="form-label"
+                  >Style <span class="text-danger">*</span></label
+                >
+                <div class="d-flex gap-2">
+                  <select class="form-select" id="styleSelect2">
+                    <option value="">Select Style</option>
+                    <option>Style 1</option>
+                    <option>Style 2</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-add"
+                    title="Add New Style"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="qty" class="form-label"
+                  >Qty <span class="text-danger">*</span></label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="qty"
+                  placeholder="Enter Quantity"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="card shadow-sm rounded-4 mt-4">
+          <div class="card-body">
+            <ul class="nav nav-tabs mb-3" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  data-mdb-toggle="tab"
+                  class="nav-link active"
+                  id="tab1-tab"
+                  href="#tab1"
+                  role="tab"
+                  aria-controls="tab1"
+                  aria-selected="true"
+                >
+                  <i class="fas fa-tshirt me-2"></i> Fabric
+                </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  data-mdb-toggle="tab"
+                  class="nav-link"
+                  id="tab2-tab"
+                  href="#tab2"
+                  role="tab"
+                  aria-controls="tab2"
+                  aria-selected="false"
+                >
+                  <i class="fas fa-industry me-2"></i> CMT
+                </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  data-mdb-toggle="tab"
+                  class="nav-link"
+                  id="tab3-tab"
+                  href="#tab3"
+                  role="tab"
+                  aria-controls="tab3"
+                  aria-selected="false"
+                >
+                  <i class="fas fa-warehouse me-2"></i> Store
+                </a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  data-mdb-toggle="tab"
+                  class="nav-link"
+                  id="tab4-tab"
+                  href="#tab4"
+                  role="tab"
+                  aria-controls="tab4"
+                  aria-selected="false"
+                >
+                  <i class="fas fa-warehouse me-2"></i> T & A
+                </a>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="ex-with-icons-content">
+              <div
+                class="tab-pane fade show active"
+                id="tab1"
+                role="tabpanel"
+                aria-labelledby="tab1-tab"
+              >
+                <!-- Dynamic Form Area -->
+                <div class="form-top-bar row g-2 align-items-end mt-3">
+                  <div class="col-md-6">
+                    <label>Select</label>
+                    <select class="form-select">
+                      <option>Select</option>
+                      <option>Top</option>
+                      <option>Bottom</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label>Description</label>
+                    <input
+                      type="text"
+                      id="styleInput"
+                      class="form-control"
+                      placeholder="Enter style description"
+                    />
+                  </div>
+                  <div class="col-12 text-center mt-2">
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      onclick="addDesignBlock()"
+                    >
+                      <i class="fas fa-plus"></i> Add
+                    </button>
+                  </div>
+                </div>
+                <div class="row" id="designBlocksContainer"></div>
+                <div class="text-center mt-4">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab2"
+                role="tabpanel"
+                aria-labelledby="tab2-tab"
+              >
+                Tab 2 content (CMT)
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab3"
+                role="tabpanel"
+                aria-labelledby="tab3-tab"
+              >
+                Tab 3 content (Store)
+              </div>
+              <div
+                class="tab-pane fade"
+                id="tab4"
+                role="tabpanel"
+                aria-labelledby="tab4-tab"
+              >
+                Tab 4 content (T & A)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    <script>
+      document.getElementById("toggleBtn").addEventListener("click", () => {
+        document.getElementById("sidebar").classList.toggle("active");
+      });
+
+      document.getElementById("profileIcon").addEventListener("click", () => {
+        const dd = document.getElementById("profileDropdown");
+        dd.style.display = dd.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", (e) => {
+        const dd = document.getElementById("profileDropdown"),
+          icon = document.getElementById("profileIcon");
+        if (!icon.contains(e.target) && !dd.contains(e.target))
+          dd.style.display = "none";
+      });
+
+      let designCounter = 1;
+      function generateRow(useTextBox = false) {
+        return `<tr><td>${
+          useTextBox
+            ? `<input type="text" class="form-control" placeholder="Enter Process">`
+            : `<select class="form-select"><option>Yarn</option><option>Knitting</option><option>Dyeing</option><option>Printing</option></select>`
+        }</td><td><input type="text" class="form-control" placeholder="Quote"></td><td><input type="text" class="form-control" placeholder="Confirm"></td><td></td></tr>`;
+      }
+      function addRow(sectionId) {
+        document
+          .getElementById(sectionId)
+          .insertAdjacentHTML("beforeend", generateRow(true));
+      }
+      function addDesignBlock() {
+        const container = document.getElementById("designBlocksContainer"),
+          sectionId = `designSection${designCounter}`,
+          selectId = `select-${designCounter}`,
+          inputId = `desc-${designCounter}`;
+        let defaultRows = "";
+        for (let i = 0; i < 4; i++) defaultRows += generateRow();
+        const col = document.createElement("div");
+        col.className = "col-md-6 mb-4";
+        col.innerHTML = `
+        <div class="border p-3 rounded shadow-sm bg-light">
+          <div class="row g-2 align-items-end mb-3">
+            <div class="col-md-6">
+              <label>Select</label>
+              <select class="form-select" id="${selectId}">
+                <option>Select</option><option>Top</option><option>Bottom</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>Description</label>
+              <input type="text" id="${inputId}" class="form-control" placeholder="Enter style description">
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Process</th>
+                <th>Quote</th>
+                <th>Confirm</th>
+                <th><button class="btn btn-sm btn-success" onclick="addRow('${sectionId}')">+</button></th>
+              </tr>
+            </thead>
+            <tbody id="${sectionId}">${defaultRows}</tbody>
+          </table>
+        </div>`;
+        container.appendChild(col);
+        designCounter++;
+      }
+    </script>
+  </body>
+</html>
