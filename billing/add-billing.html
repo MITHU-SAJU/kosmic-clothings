@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-HK5fgLBL+xVd3MZ1JbRbld9GcD8I+HyzfBNUJqU1zxgYj2zv+aj1Z7FTeK4wKpoUOjM+Z4G2dM1r1w1a6zWd7Q=="
@@ -156,30 +159,61 @@
         </div>
 
         <!-- Order Creation Form -->
-        <!-- Your HTML -->
         <div class="container-fluid px-3">
             <div class="card shadow-sm mt-4">
                 <div class="card-body">
                     <form id="orderForm" class="row g-4">
                         <!-- Row 1 -->
-                        <div class="col-md-6">
-                            <label for="orderNumber" class="form-label">
-                                Order # <span class="text-danger">*</span>
-                            </label>
-                            <input type="text" class="form-control" id="orderNumber" placeholder="Enter Order Number"
-                                required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="refNumber" class="form-label">
-                                Ref # <small class="text-muted">(auto)</small>
-                            </label>
-                            <input type="text" class="form-control" id="refNumber" placeholder="Auto generated"
-                                disabled>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="orderNumber" class="form-label">
+                                    Order # <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="orderNumber"
+                                    placeholder="Enter Order Number" required>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="refNumber" class="form-label">
+                                    Ref # <small class="text-muted">(auto)</small>
+                                </label>
+                                <input type="text" class="form-control" id="refNumber" placeholder="Auto generated"
+                                    disabled>
+                            </div>
                         </div>
 
-                        <!-- Entry Row -->
-                        <div class="entryRow mb-3 border rounded p-2">
-                            <div class="row g-2 mb-2">
+
+                        <!-- Supplier Details -->
+
+                        <div class="entryRow mb-3 border rounded p-3">
+                            <h5 class="mb-3">Supplier Details</h5>
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label">Supplier Name <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="supplierName" required>
+                                        <option value="">Select</option>
+                                        <option>Supplier 1</option>
+                                        <option>Supplier 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label">Supplier Bill No</label>
+                                    <input type="text" id="supplierBill" class="form-control"
+                                        placeholder="Enter Supplier Bill No">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Order Details -->
+                        <div class="entryRow mb-3 border rounded p-3">
+                            <h5 class="mb-3">Order Details</h5>
+                            <div class="row g-3 mb-2">
+                                <div class="col-md-4">
+                                    <label class="form-label">Style No <span class="text-danger">*</span></label>
+                                    <input type="text" id="styleNo" class="form-control" placeholder="Enter Style No"
+                                        required>
+                                </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Process Type <span class="text-danger">*</span></label>
                                     <select class="form-select" id="processType" required>
@@ -200,20 +234,8 @@
                                         <option>Finishing</option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Supplier Name <span class="text-danger">*</span></label>
-                                    <select class="form-select" id="supplierName" required>
-                                        <option value="">Select</option>
-                                        <option>Supplier 1</option>
-                                        <option>Supplier 2</option>
-                                    </select>
-                                </div>
                             </div>
-                            <div class="row g-2">
-                                <div class="col-md-4">
-                                    <label class="form-label">Bill No</label>
-                                    <input type="text" id="supplierBill" class="form-control" placeholder="Bill No">
-                                </div>
+                            <div class="row g-3">
                                 <div class="col-md-4">
                                     <label class="form-label">Qty</label>
                                     <input type="number" id="qty" class="form-control" placeholder="Qty">
@@ -223,18 +245,17 @@
                                     <input type="number" step="0.01" id="price" class="form-control"
                                         placeholder="Price">
                                 </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Remarks</label>
+                                    <input type="text" id="remarks" class="form-control" placeholder="Enter Remarks">
+                                </div>
                             </div>
                         </div>
 
                         <!-- Save Button -->
-                        <!-- Save Button -->
                         <div class="d-flex justify-content-end mt-4">
-                            <button type="button" id="saveBtn" class="btn btn-primary btn-lg">
-                                Save
-                            </button>
+                            <button type="button" id="saveBtn" class="btn btn-primary btn-lg">Save</button>
                         </div>
-
-
                     </form>
                 </div>
             </div>
@@ -247,16 +268,16 @@
                         <table class="table table-bordered align-middle text-center fs-5" id="dataTable">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Order #</th>
-                                    <th>Ref #</th>
-                                    <th>Process Type</th>
-                                    <th>Process Sub Type</th>
                                     <th>Supplier</th>
                                     <th>Bill No</th>
+                                    <th>Style No</th>
+                                    <th>Process Type</th>
+                                    <th>Process Sub Type</th>
                                     <th>Qty</th>
                                     <th>Price</th>
                                     <th>Amount</th>
                                     <th>Budget</th>
+                                    <th>Remarks</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -268,93 +289,149 @@
                     <button type="submit" class="btn btn-success btn-lg">Submit</button>
                 </div>
             </div>
-
-
         </div>
-    </main>
-    <script src="../script.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const saveBtn = document.getElementById("saveBtn");
-            const tableBody = document.querySelector("#dataTable tbody");
+        <!-- Modal -->
+        <div class="modal fade" id="remarksModal" tabindex="-1" aria-labelledby="remarksModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content shadow-lg border-0">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="remarksModalLabel"><i class="fas fa-comment-dots me-2"></i>Remarks
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body fs-5" id="remarksContent"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-times me-1"></i>Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            function loadData() {
-                let entries = JSON.parse(localStorage.getItem("billingData")) || [];
-                tableBody.innerHTML = "";
-                entries.forEach((row, index) => {
-                    let tr = document.createElement("tr");
-                    tr.innerHTML = `
-                <td>${row.orderNumber}</td>
-                <td>${row.refNumber}</td>
-                <td>${row.processType}</td>
-                <td>${row.processSubType}</td>
+        <!-- JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../script.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const saveBtn = document.getElementById("saveBtn");
+                const tableBody = document.querySelector("#dataTable tbody");
+
+                // Load data from localStorage
+                function loadData() {
+                    let entries = JSON.parse(localStorage.getItem("billingData")) || [];
+                    tableBody.innerHTML = "";
+                    entries.forEach((row, index) => {
+                        let tr = document.createElement("tr");
+                        tr.innerHTML = `
                 <td>${row.supplierName}</td>
                 <td>${row.supplierBill}</td>
+                <td>${row.styleNo}</td>
+                <td>${row.processType}</td>
+                <td>${row.processSubType}</td>
                 <td>${row.qty}</td>
                 <td>${row.price}</td>
                 <td>${row.amount}</td>
                 <td>${row.budget}</td>
                 <td>
-                    <button class="btn btn-sm btn-danger" onclick="deleteRow(${index})">
+                    <button class="btn btn-info btn-sm" onclick="viewRemarks('${row.remarks || ''}')">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="deleteRow(${index})">
                         <i class="fas fa-trash-alt"></i>
                     </button>
                 </td>
             `;
-                    tableBody.appendChild(tr);
+                        tableBody.appendChild(tr);
+                    });
+                }
+
+                // Save data
+                saveBtn.addEventListener("click", function () {
+                    const supplierName = document.getElementById("supplierName").value;
+                    const supplierBill = document.getElementById("supplierBill").value;
+                    const styleNo = document.getElementById("styleNo").value;
+                    const processType = document.getElementById("processType").value;
+                    const processSubType = document.getElementById("processSubType").value;
+                    const qty = parseFloat(document.getElementById("qty").value) || 0;
+                    const price = parseFloat(document.getElementById("price").value) || 0;
+                    const remarks = document.getElementById("remarks").value;
+
+                    if (!supplierName || !styleNo || !processType || !processSubType) {
+                        alert("Please fill all required fields.");
+                        return;
+                    }
+
+                    const amount = (qty * price).toFixed(2);
+                    const budget = (amount * 1.1).toFixed(2);
+
+                    let newRow = {
+                        supplierName,
+                        supplierBill,
+                        styleNo,
+                        processType,
+                        processSubType,
+                        qty,
+                        price,
+                        amount,
+                        budget,
+                        remarks
+                    };
+
+                    let entries = JSON.parse(localStorage.getItem("billingData")) || [];
+                    entries.push(newRow);
+                    localStorage.setItem("billingData", JSON.stringify(entries));
+
+                    loadData();
+                    document.getElementById("orderForm").reset();
                 });
+
+                loadData();
+            });
+
+            // Global functions for onclick
+            function viewRemarks(remarks) {
+                document.getElementById("remarksContent").textContent = remarks || "No remarks available.";
+                let modal = new bootstrap.Modal(document.getElementById('remarksModal'));
+                modal.show();
             }
 
-            window.deleteRow = function (index) {
+            function deleteRow(index) {
                 let entries = JSON.parse(localStorage.getItem("billingData")) || [];
                 entries.splice(index, 1);
                 localStorage.setItem("billingData", JSON.stringify(entries));
-                loadData();
-            };
+                document.querySelector("#dataTable tbody").innerHTML = "";
+                entries.forEach((row, i) => {
+                    let tr = document.createElement("tr");
+                    tr.innerHTML = `
+            <td>${row.supplierName}</td>
+            <td>${row.supplierBill}</td>
+            <td>${row.styleNo}</td>
+            <td>${row.processType}</td>
+            <td>${row.processSubType}</td>
+            <td>${row.qty}</td>
+            <td>${row.price}</td>
+            <td>${row.amount}</td>
+            <td>${row.budget}</td>
+            <td>
+                <button class="btn btn-info btn-sm" onclick="viewRemarks('${row.remarks || ''}')">
+                    <i class="fas fa-eye"></i> View
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="deleteRow(${i})">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </td>
+        `;
+                    document.querySelector("#dataTable tbody").appendChild(tr);
+                });
+            }
+        </script>
+</body>
 
-            saveBtn.addEventListener("click", function () {
-                const orderNumber = document.getElementById("orderNumber").value;
-                const refNumber = document.getElementById("refNumber").value || `REF-${Date.now()}`;
-                const processType = document.getElementById("processType").value;
-                const processSubType = document.getElementById("processSubType").value;
-                const supplierName = document.getElementById("supplierName").value;
-                const supplierBill = document.getElementById("supplierBill").value;
-                const qty = parseFloat(document.getElementById("qty").value) || 0;
-                const price = parseFloat(document.getElementById("price").value) || 0;
-
-                if (!orderNumber || !processType || !processSubType || !supplierName) {
-                    alert("Please fill all required fields.");
-                    return;
-                }
-
-                const amount = (qty * price).toFixed(2);
-                const budget = (amount * 1.1).toFixed(2); // Example logic: budget = 110% of amount
-
-                let newRow = {
-                    orderNumber,
-                    refNumber,
-                    processType,
-                    processSubType,
-                    supplierName,
-                    supplierBill,
-                    qty,
-                    price,
-                    amount,
-                    budget
-                };
-
-                let entries = JSON.parse(localStorage.getItem("billingData")) || [];
-                entries.push(newRow);
-                localStorage.setItem("billingData", JSON.stringify(entries));
-
-                loadData();
-
-                // Reset form except order/ref
-                document.getElementById("orderForm").reset();
-                document.getElementById("orderNumber").value = orderNumber;
-                document.getElementById("refNumber").value = refNumber;
-            });
-
-            loadData();
-        });
-    </script>
+</html>
