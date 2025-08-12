@@ -436,3 +436,292 @@ table.dataTable>thead>tr>th {
       text-align: center;
     }
   }
+
+
+    .login-box {
+      background: #fff;
+      padding: 3rem 2.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+      animation: fadeInUp 0.9s ease;
+      position: relative;
+    }
+
+    .login-box img.logo {
+      width: 90px;
+      display: block;
+      margin: 0 auto 1.2rem;
+      animation: dropIn 1.2s ease;
+    }
+
+    .login-box h3 {
+      font-weight: 700;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+
+    .btn-login {
+      background: #0d6efd;
+      color: #fff;
+      border-radius: 2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 rgba(13, 110, 253, 0);
+    }
+
+    .btn-login:hover {
+      background: #084298;
+      box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
+    }
+
+    .forgot {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes dropIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+
+.radio-card-wrapper {
+    position: relative;
+    cursor: pointer;
+    flex: 1;
+}
+
+.radio-card {
+    padding: 20px;
+    border: 2px solid #d0d0d0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #f7f7f7, #fff);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+}
+
+.radio-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.radio-card-wrapper input[type="radio"]:checked + .radio-card {
+    border-color: #007bff;
+    background: linear-gradient(135deg, #e3f2ff, #f0f9ff);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.radio-dot {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-card-wrapper input[type="radio"]:checked + .radio-card .radio-dot {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+    
+
+/* for view-po */
+.po-wrapper {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.po-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.po-company-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.po-company,
+.po-to-address {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.po-address {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.po-to-title {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.po-to-name {
+    margin-bottom: 0;
+}
+
+.po-table th,
+.po-table td,
+.po-items-table th,
+.po-items-table td {
+    vertical-align: middle;
+    padding: 12px;
+}
+
+.po-table thead {
+    background-color: #f8f9fa;
+}
+
+.po-total-table input {
+    border-radius: 0.4rem;
+}
+
+.po-label {
+    font-weight: 500;
+}
+
+.po-signature,
+.po-signature-box {
+    height: 80px;
+    border-top: 1px solid #ced4da;
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.po-divider,
+hr {
+    border-top: 2px dashed #ced4da;
+}
+
+.po-info-box {
+    font-size: 0.95rem;
+    background-color: #fcfcfc;
+}
+
+.po-readonly-box {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    border-radius: 6px;
+    min-height: 38px;
+    line-height: 1.4;
+}
+
+
+    /* Special styling for highlighted numeric fields */
+    .highlight-input {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border: 2px solid #198754; /* Bootstrap success color */
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        padding: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .highlight-input:focus {
+        background: white;
+        border-color: #0d6efd; /* Bootstrap primary */
+        box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+        outline: none;
+    }
+
+    .highlight-label {
+        font-weight: 600;
+        color: #198754;
+    }
+
+        .billing-header {
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .highlight-amount {
+            background: linear-gradient(90deg, #e3ffe7, #d9e7ff);
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+
+  .info-card {
+        padding: 18px;
+        border-radius: 14px;
+        color: #333;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 110px;
+        transition: all 0.25s ease-in-out;
+    }
+    .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .info-card strong {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        opacity: 0.8;
+    }
+    .info-card p {
+        margin: 5px 0 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    /* Fresh pastel gradient set */
+    .gradient-1 {
+        background: linear-gradient(135deg, #fdfcfb, #e6f0e6);
+        color: #1f3d1f;
+    }
+    .gradient-2 {
+        background: linear-gradient(135deg, #ffe6e6, #fff2e6);
+        color: #5a2e2e;
+    }
+    .gradient-3 {
+        background: linear-gradient(135deg, #e6f7ff, #f0f5ff);
+        color: #1f2d3d;
+    }

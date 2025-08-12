@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Order List</title>
+  <title>Users List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Bootstrap CSS -->
@@ -36,7 +36,7 @@
         </a>
       </li>
       <li>
-        <a href="order-list.html">
+        <a href="../orders/order-list.html">
           <i class="fas fa-box"></i>
           <span>Orders</span>
         </a>
@@ -60,13 +60,13 @@
         </a>
       </li>
       <li>
-        <a href="../purchase-orders/purchase-order-list.html">
+        <a href="../purchase-order-list.html">
           <i class="fas fa-chart-line"></i>
           <span>Purchase Orders</span>
         </a>
       </li>
       <li>
-        <a href="../user-creation/user-list.html">
+        <a href="./user-list.html">
           <i class="fas fa-users"></i>
           <span>Users</span>
         </a>
@@ -85,7 +85,7 @@
         </a>
       </li>
       <li>
-        <a href="../suppliers/supplier-list.html">
+        <a href="./supplier-list.html">
           <i class="fas fa-chart-line"></i>
           <span>Suppliers</span>
         </a>
@@ -133,13 +133,12 @@
       </li>
     </ul>
   </nav>
-
   <!-- Main Content -->
   <div class="main-content" id="mainContent">
     <!-- Header -->
     <div id="mainHeader"
       class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm w-100">
-      <h4 class="fw-bold mb-0">Order List</h4>
+      <h4 class="fw-bold mb-0">Users List</h4>
       <div>
         <i id="notificationBell" class="bi bi-bell fs-4 me-3" style="cursor: pointer"></i>
         <i id="profileIcon" class="bi bi-person-circle fs-4" style="cursor: pointer"></i>
@@ -153,7 +152,7 @@
           <!-- Header Button -->
           <div class="row">
             <div class="col text-end mb-3">
-              <a class="uiverse-btn" href="./order.html">New Order</a>
+              <a class="uiverse-btn" href="./user.html">New User</a>
             </div>
           </div>
 
@@ -163,60 +162,55 @@
               <thead class="custom-thead text-center">
                 <tr>
                   <th>S.NO</th>
-                  <th>IMAGE</th>
-                  <th>STYLE #</th>
-                  <th>COLOR</th>
-                  <th>SIZE</th>
-                  <th>QTY</th>
-                  <th>EXCESS QTY</th>
+                  <th>NAME</th>
+                  <th>EMAIL</th>
+                  <th>ROLE</th>
                   <th>ACTIONS</th>
                 </tr>
               </thead>
-              <tbody>
-                <!-- Sample Row -->
+              <tbody class="text-center">
                 <tr>
                   <td>1</td>
+                  <td>Rahul Sharma</td>
+                  <td>rahul.sharma@example.com</td>
+                  <td><span class="badge bg-primary">Admin</span></td>
                   <td>
-                    <img src="../assets/sample-img/one.jpeg" alt="Product Image" class="img-thumbnail" />
-                  </td>
-                  <td>STL-001</td>
-                  <td>Red</td>
-                  <td>M</td>
-                  <td>100</td>
-                  <td>5</td>
-                  <td>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <button class="btn btn-sm btn-success" title="Edit">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger" title="Delete">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </div>
+                    <button class="btn btn-sm btn-success me-1" title="Edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" title="Delete">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
                   </td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>2</td>
+                  <td>Priya Patel</td>
+                  <td>priya.patel@example.com</td>
+                  <td><span class="badge bg-secondary">User</span></td>
                   <td>
-                    <img src="../assets/sample-img/one.jpeg" alt="Product Image" class="img-thumbnail" />
-                  </td>
-                  <td>STL-001</td>
-                  <td>Red</td>
-                  <td>M</td>
-                  <td>100</td>
-                  <td>5</td>
-                  <td>
-                    <div class="d-flex justify-content-center align-items-center gap-2">
-                      <button class="btn btn-sm btn-success" title="Edit">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger" title="Delete">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </div>
+                    <button class="btn btn-sm btn-success me-1" title="Edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" title="Delete">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
                   </td>
                 </tr>
-                <!-- Repeated rows can follow here -->
+                <tr>
+                  <td>3</td>
+                  <td>Vikram Rao</td>
+                  <td>vikram.rao@example.com</td>
+                  <td><span class="badge bg-primary">Admin</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-success me-1" title="Edit">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger" title="Delete">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>New Purchase Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <!-- MDB UI Kit CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+    <!-- Toggle Button -->
+    <!-- Sidebar Toggle Button -->
+    <div class="toggle-btn" id="toggleBtn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <img src="./assets/logo.png" alt="Logo" />
+        </div>
+        <ul>
+            <li>
+                <a href="../index.html">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="../orders/order-list.html">
+                    <i class="fas fa-box"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="../budget/budget-list.html">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Budget</span>
+                </a>
+            </li>
+            <li>
+                <a href="../planning/planning-list.html">
+                    <i class="fas fa-palette"></i>
+                    <span>Planning</span>
+                </a>
+            </li>
+            <li>
+                <a href="../billing/billing-list.html">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Billing</span>
+                </a>
+            </li>
+            <li>
+                <a href="./purchase-order-list.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Purchase Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="../user-creation/user-list.html">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../t&a/t&a.html">
+                    <i class="fas fa-credit-card"></i>
+                    <span>T & A</span>
+                </a>
+            </li>
+            <li>
+                <a href="./logs/logs.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+            </li>
+            <li>
+                <a href="../suppliers/supplier-list.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Suppliers</span>
+                </a>
+            </li>
+            <li>
+                <a href="./roles/roles.html">
+                    <i class="fas fa-cogs"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+            <!-- Submenu -->
+            <li class="has-submenu">
+                <a href="#" class="submenu-toggle">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Masters</span>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="./payment/payment.html">
+                            <i class="fas fa-ruler-combined"></i>
+                            <span>Sizes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment/payment.html">
+                            <i class="fas fa-fill-drip"></i>
+                            <span>Colors</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment/payment.html">
+                            <i class="fas fa-user-tag"></i>
+                            <span>Buyers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./payment/payment.html">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Seasons</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main id="mainContent" class="main-content">
+        <div id="mainHeader"
+            class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm">
+            <h4 class="fw-bold mb-0">Purchase Order</h4>
+            <div>
+                <i class="bi bi-bell fs-4 me-3"></i>
+                <i id="profileIcon" class="bi bi-person-circle fs-4" style="cursor: pointer"></i>
+            </div>
+        </div>
+
+        <!-- Profile dropdown -->
+        <div class="position-fixed top-0 end-0 p-3">
+            <div class="position-relative d-inline-block">
+                <div id="profileDropdown" class="dropdown-menu shadow" style="display: none; right: 0; top: 50px">
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body content -->
+        <div class="container-fluid px-3">
+            <div class="card shadow-sm mt-4">
+                <div class="card-body">
+                    <h2 class="mb-4">New Purchase Order</h2>
+                    <form class="row g-4">
+                        <!-- Row 1 -->
+                        <div class="col-md-4">
+                            <label for="poNumber" class="form-label">P.O. #</label>
+                            <input type="text" class="form-control" id="poNumber" placeholder="Enter P.O number" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="poDate" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="poDate" placeholder="dd-mm-yyyy" />
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="col-md-4">
+                            <label for="supplierName" class="form-label">Supplier Name</label>
+                            <input type="text" class="form-control" id="supplierName"
+                                placeholder="Enter supplier name" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="supllierrMobile" class="form-label">Supplier Mobile</label>
+                            <input type="tel" class="form-control" id="supplierMobile"
+                                placeholder="Enter mobile number" />
+                        </div>
+
+
+                        <!-- Row 3 -->
+                        <div class="col-md-4">
+                            <label for="addressLine1" class="form-label">Address Line 1</label>
+                            <input type="text" class="form-control" id="addressLine1" placeholder="Flat/Street/Area" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="addressLine2" class="form-label">Address Line 2</label>
+                            <input type="text" class="form-control" id="addressLine2"
+                                placeholder="Landmark/Additional Info" />
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="col-md-4">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="Enter city name" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="Enter state" />
+                        </div>
+                        <div class="col-md-4">
+                            <label for="pinCode" class="form-label">PIN Code</label>
+                            <input type="number" class="form-control" id="pinCode"
+                                placeholder="Enter 6-digit PIN code" />
+                        </div>
+
+
+
+                        <div id="address-options" class="form-group mt-5 mb-4">
+                            <div class="d-flex flex-column flex-md-row gap-4">
+
+                                <!-- Option 1 -->
+                                <label class="radio-card-wrapper">
+                                    <input type="radio" name="addressChoice" value="billing"
+                                        onchange="handleAddressChoice()" hidden>
+                                    <div class="radio-card">
+                                        <div class="radio-dot"></div>
+                                        <div>
+                                            <h6 class="mb-1">Same Delivery Address</h6>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Option 2 -->
+                                <label class="radio-card-wrapper">
+                                    <input type="radio" name="addressChoice" value="manual"
+                                        onchange="handleAddressChoice()" hidden>
+                                    <div class="radio-card">
+                                        <div class="radio-dot"></div>
+                                        <div>
+                                            <h6 class="mb-1">Add New Delivery Address</h6>
+                                        </div>
+                                    </div>
+                                </label>
+
+                            </div>
+                        </div>
+
+
+                        <!-- Manual Entry (Hidden by default) -->
+                        <div id="manual-entry" style="display: none; margin-top: 15px;">
+                            <div class="section-style mb-4">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Location</label>
+                                        <input type="text" class="form-control custom-input" placeholder="Location" />
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Address Line 1</label>
+                                        <input type="text" class="form-control custom-input"
+                                            placeholder="Billing Address 1" />
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Address Line 2</label>
+                                        <input type="text" class="form-control custom-input"
+                                            placeholder="Billing Address 2" />
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control custom-input" placeholder="City" />
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">PIN Code</label>
+                                        <input type="number" class="form-control custom-input" placeholder="PIN Code" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border-top: 2px solid #ccc; margin: 20px 0;"></div>
+
+
+                        <div class="container-fluid my-4">
+                            <h2 class="mb-4">Product Selection</h2>
+                            <div id="filterRowContainer">
+
+                                <div class="row g-3 align-items-end mb-3 filter-row">
+
+                                    <!-- Search Box -->
+                                    <div class="col-md">
+                                        <label class="form-label">Search</label>
+                                        <input type="text" class="form-control" placeholder="Order">
+                                    </div>
+
+                                    <!-- Style No. Dropdown -->
+                                    <div class="col-md">
+                                        <label class="form-label">Style No.</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Style</option>
+                                            <option>STL-001</option>
+                                            <option>STL-002</option>
+                                            <option>STL-003</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Size Dropdown -->
+                                    <div class="col-md">
+                                        <label class="form-label">Size</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Size</option>
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                            <option>XL</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Item Type Dropdown -->
+                                    <div class="col-md">
+                                        <label class="form-label">Item Type</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Item Type</option>
+                                            <option>Top</option>
+                                            <option>Bottom</option>
+
+                                        </select>
+                                    </div>
+
+                                    <!-- Orders Dropdown -->
+                                    <div class="col-md">
+                                        <label class="form-label">Department</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Order</option>
+                                            <option>Fabric</option>
+                                            <option>CMT</option>
+                                            <option>Store</option>
+                                            <option>Print & Embroidery</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Add Button -->
+                                    <div class="col-md-auto">
+                                        <!-- Add Button -->
+                                        <button type="button" class="btn btn-warning btn-add py-3 px-4" title="Add Row"
+                                            style="font-size: 1.2rem;">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+
+                                    <table class="table table-bordered align-middle shadow-sm">
+                                        <thead class="text-center table-light">
+                                            <tr>
+                                                <th>S.No.</th>
+                                                <th>Style No</th>
+                                                <th>Particulars</th>
+                                                <th>Size</th>
+                                                <th>QTY / PCS</th>
+                                                <th>Rate</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>PB-DD-16</td>
+                                                <td>PETTRSU WOVEN MAIN LABEL BLACK COLOUR</td>
+                                                <td>L</td>
+                                                <td>700</td>
+                                                <td>0.450</td>
+                                                <td>315</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                    <div style="border-top: 2px solid #ccc; margin: 20px 0;"></div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-center align-items-center" ;>
+                            <a href="./view-purchase-orders.html" class="btn btn-primary px-4">
+                                Submit
+                            </a>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Scripts -->
+        <script src="../script.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+        <script>
+            function addFilterRow() {
+                const container = document.getElementById("filterRowContainer");
+                const original = document.querySelector(".filter-row");
+                const clone = original.cloneNode(true);
+
+                // Reset input values
+                clone.querySelectorAll('input').forEach(input => input.value = '');
+                clone.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+
+                container.appendChild(clone);
+            }
+
+            function removeFilterRow(button) {
+                const row = button.closest(".filter-row");
+                const allRows = document.querySelectorAll(".filter-row");
+
+                if (allRows.length > 1) {
+                    row.remove();
+                } else {
+                    alert("At least one row is required.");
+                }
+            }
+        </script>
+
+</body>
+
+</html>

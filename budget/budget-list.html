@@ -1,254 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Budget</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
-    />
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <!-- Toggle Button -->
-    <div class="toggle-btn" id="toggleBtn">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Budget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- Toggle Button -->
+  <!-- Sidebar Toggle Button -->
+  <div class="toggle-btn" id="toggleBtn">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="./assets/logo.png" alt="Logo" />
+    </div>
+    <ul>
+      <li>
+        <a href="../index.html">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="../orders/order-list.html">
+          <i class="fas fa-box"></i>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="./budget-list.html">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <span>Budget</span>
+        </a>
+      </li>
+      <li>
+        <a href="../planning/planning-list.html">
+          <i class="fas fa-palette"></i>
+          <span>Planning</span>
+        </a>
+      </li>
+      <li>
+        <a href="../billing/billing-list.html">
+          <i class="fas fa-credit-card"></i>
+          <span>Billing</span>
+        </a>
+      </li>
+      <li>
+        <a href="../purchase-orders/purchase-order-list.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Purchase Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="../user-creation/user-list.html">
+          <i class="fas fa-users"></i>
+          <span>Users</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="../t&a/t&a.html">
+          <i class="fas fa-credit-card"></i>
+          <span>T & A</span>
+        </a>
+      </li>
+      <li>
+        <a href="./logs/logs.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Reports</span>
+        </a>
+      </li>
+      <li>
+        <a href="../suppliers/supplier-list.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Suppliers</span>
+        </a>
+      </li>
+      <li>
+        <a href="./roles/roles.html">
+          <i class="fas fa-cogs"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+
+      <!-- Submenu -->
+      <li class="has-submenu">
+        <a href="#" class="submenu-toggle">
+          <i class="fas fa-layer-group"></i>
+          <span>Masters</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <ul class="submenu">
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-ruler-combined"></i>
+              <span>Sizes</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-fill-drip"></i>
+              <span>Colors</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-user-tag"></i>
+              <span>Buyers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Seasons</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <!-- Header -->
+    <div id="mainHeader"
+      class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm w-100">
+      <h4 class="fw-bold mb-0">Budget List</h4>
+      <div>
+        <i id="notificationBell" class="bi bi-bell fs-4 me-3" style="cursor: pointer"></i>
+        <i id="profileIcon" class="bi bi-person-circle fs-4" style="cursor: pointer"></i>
+      </div>
     </div>
 
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar">
-      <div class="sidebar-logo">
-        <img src="./assets/logo.png" alt="Logo" />
-      </div>
-      <ul>
-        <li>
-          <a href="../index.html"
-            ><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a
-          >
-        </li>
-        <li>
-          <a href="../orders/order-list.html"
-            ><i class="fas fa-box"></i><span>Orders</span></a
-          >
-        </li>
-        <li>
-          <a href="./budget-list.html"
-            ><i class="fas fa-file-invoice-dollar"></i><span>Budget</span></a
-          >
-        </li>
-        <li>
-          <a href="../planning/planning-list.html"
-            ><i class="fas fa-palette"></i><span>Planning</span></a
-          >
-        </li>
-        <li>
-          <a href="./orders/order.html"
-            ><i class="fas fa-credit-card"></i><span>Billing</span></a
-          >
-        </li>
-        <li>
-          <a href="./logs/logs.html"
-            ><i class="fas fa-chart-line"></i><span>Reports</span></a
-          >
-        </li>
-        <li>
-          <a href="./roles/roles.html"
-            ><i class="fas fa-cogs"></i><span>Settings</span></a
-          >
-        </li>
-
-        <li class="has-submenu">
-          <a href="#" class="submenu-toggle">
-            <i class="fas fa-layer-group"></i><span>Masters</span>
-            <i class="fas fa-chevron-down arrow"></i>
-          </a>
-          <ul class="submenu">
-            <li>
-              <a href="./payment/payment.html"
-                ><i class="fas fa-ruler-combined"></i><span>Sizes</span></a
-              >
-            </li>
-            <li>
-              <a href="./payment/payment.html"
-                ><i class="fas fa-fill-drip"></i><span>Colors</span></a
-              >
-            </li>
-            <li>
-              <a href="./payment/payment.html"
-                ><i class="fas fa-user-tag"></i><span>Buyers</span></a
-              >
-            </li>
-            <li>
-              <a href="./payment/payment.html"
-                ><i class="fas fa-calendar-alt"></i><span>Seasons</span></a
-              >
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent">
-      <!-- Header -->
-      <div
-        id="mainHeader"
-        class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm w-100"
-      >
-        <h4 class="fw-bold mb-0">Budget List</h4>
-        <div>
-          <i
-            id="notificationBell"
-            class="bi bi-bell fs-4 me-3"
-            style="cursor: pointer"
-          ></i>
-          <i
-            id="profileIcon"
-            class="bi bi-person-circle fs-4"
-            style="cursor: pointer"
-          ></i>
-        </div>
-      </div>
-
-      <!-- Page Container -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm rounded-4 mt-4">
-          <div class="card-body">
-            <!-- Header Button -->
-            <div class="row">
-              <div class="col text-end mb-3">
-                <a class="uiverse-btn" href="./new-budget.html">New Budget</a>
-              </div>
+    <!-- Page Container -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm rounded-4 mt-4">
+        <div class="card-body">
+          <!-- Header Button -->
+          <div class="row">
+            <div class="col text-end mb-3">
+              <a class="uiverse-btn" href="./new-budget.html">New Budget</a>
             </div>
+          </div>
 
-            <!-- Responsive Table -->
-            <div class="table-responsive" id="responsive-table">
-              <table id="budgetTable" class="table table-striped table-hover">
-                <thead class="custom-thead">
-                  <tr>
-                    <th>S.NO</th>
-                    <th>STYLE IMG</th>
-                    <th>BUYER NAME</th>
-                    <th>STYLE #</th>
-                    <th>ORDER #</th>
-                    <th>QTY</th>
-                    <th>ACTIONS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <img
-                        src="../assets/sample-img/one.jpeg"
-                        alt="Style 1"
-                        class="img-thumbnail style-img"
-                      />
-                    </td>
-                    <td>Reliance Trends</td>
-                    <td>ST1234</td>
-                    <td>ORD-56789</td>
-                    <td>1500</td>
-                    <td>
-                      <button class="btn btn-sm btn-warning me-1">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <img
-                        src="../assets/sample-img/two.jpeg"
-                        alt="Style 2"
-                        class="img-thumbnail style-img"
-                      />
-                    </td>
-                    <td>Max Fashion</td>
-                    <td>ST2456</td>
-                    <td>ORD-87234</td>
-                    <td>1200</td>
-                    <td>
-                      <button class="btn btn-sm btn-warning me-1">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <img
-                        src="../assets/sample-img/one.jpeg"
-                        alt="Style 3"
-                        class="img-thumbnail style-img"
-                      />
-                    </td>
-                    <td>V-Mart</td>
-                    <td>ST3902</td>
-                    <td>ORD-45677</td>
-                    <td>1800</td>
-                    <td>
-                      <button class="btn btn-sm btn-warning me-1">
-                        <i class="fas fa-edit"></i>
-                      </button>
-                      <button class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <!-- Responsive Table -->
+          <div class="table-responsive" id="responsive-table">
+            <table id="budgetTable" class="table table-striped table-hover">
+              <thead class="custom-thead">
+                <tr>
+                  <th>S.NO</th>
+                  <th>STYLE IMG</th>
+                  <th>BUYER NAME</th>
+                  <th>STYLE #</th>
+                  <th>ORDER #</th>
+                  <th>QTY</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <img src="../assets/sample-img/one.jpeg" alt="Style 1" class="img-thumbnail style-img" />
+                  </td>
+                  <td>Reliance Trends</td>
+                  <td>ST1234</td>
+                  <td>ORD-56789</td>
+                  <td>1500</td>
+                  <td>
+                    <button class="btn btn-sm btn-warning me-1">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <img src="../assets/sample-img/two.jpeg" alt="Style 2" class="img-thumbnail style-img" />
+                  </td>
+                  <td>Max Fashion</td>
+                  <td>ST2456</td>
+                  <td>ORD-87234</td>
+                  <td>1200</td>
+                  <td>
+                    <button class="btn btn-sm btn-warning me-1">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <img src="../assets/sample-img/one.jpeg" alt="Style 3" class="img-thumbnail style-img" />
+                  </td>
+                  <td>V-Mart</td>
+                  <td>ST3902</td>
+                  <td>ORD-45677</td>
+                  <td>1800</td>
+                  <td>
+                    <button class="btn btn-sm btn-warning me-1">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../script.js"></script>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../script.js"></script>
 
-    <!-- DataTables Initialization -->
-    <script>
-      $("#budgetTable").DataTable({
-        paging: true,
-        searching: true,
-        info: true,
-        lengthChange: true,
-        pageLength: 5,
-        responsive: true,
-        language: {
-          searchPlaceholder: "Search budgets...",
-          search: "",
-          paginate: {
-            previous: "Previous",
-            next: "Next",
-          },
+  <!-- DataTables Initialization -->
+  <script>
+    $("#budgetTable").DataTable({
+      paging: true,
+      searching: true,
+      info: true,
+      lengthChange: true,
+      pageLength: 5,
+      responsive: true,
+      language: {
+        searchPlaceholder: "Search budgets...",
+        search: "",
+        paginate: {
+          previous: "Previous",
+          next: "Next",
         },
-        dom: '<"top"lf>rt<"bottom"ip><"clear">',
-      });
-    </script>
-  </body>
+      },
+      dom: '<"top"lf>rt<"bottom"ip><"clear">',
+    });
+  </script>
+</body>
+
 </html>

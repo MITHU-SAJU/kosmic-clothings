@@ -52,23 +52,36 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // image preview
-  function previewImage(event) {
-    const input = event.target;
-    const preview = document.getElementById('imagePreview');
-    const container = document.getElementById('imagePreviewContainer');
+function previewImage(event) {
+  const input = event.target;
+  const preview = document.getElementById('imagePreview');
+  const container = document.getElementById('imagePreviewContainer');
 
-    if (input.files.length > 0) {
-      const file = input.files[0];
-      const reader = new FileReader();
+  if (input.files.length > 0) {
+    const file = input.files[0];
+    const reader = new FileReader();
 
-      reader.onload = function (e) {
-        preview.src = e.target.result;
-        container.style.display = 'block';
-      };
+    reader.onload = function (e) {
+      preview.src = e.target.result;
+      container.style.display = 'block';
+    };
 
-      reader.readAsDataURL(file);
-    } else {
-      preview.src = '#';
-      container.style.display = 'none';
-    }
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = '#';
+    container.style.display = 'none';
   }
+}
+
+
+
+function handleAddressChoice() {
+  const selected = document.querySelector('input[name="addressChoice"]:checked');
+  const manualEntry = document.getElementById('manual-entry');
+
+  if (selected && selected.value === 'manual') {
+    manualEntry.style.display = 'block';
+  } else {
+    manualEntry.style.display = 'none';
+  }
+}

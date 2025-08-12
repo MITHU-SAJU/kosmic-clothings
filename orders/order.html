@@ -1,584 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <!-- font-awesome icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-HK5fgLBL+xVd3MZ1JbRbld9GcD8I+HyzfBNUJqU1zxgYj2zv+aj1Z7FTeK4wKpoUOjM+Z4G2dM1r1w1a6zWd7Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <!-- bootstrap icons -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <!-- Bootstrap JS -->
-    <link rel="stylesheet" href="../assets/js/bootstrap.bundle.min.js" />
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- font-awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xVd3MZ1JbRbld9GcD8I+HyzfBNUJqU1zxgYj2zv+aj1Z7FTeK4wKpoUOjM+Z4G2dM1r1w1a6zWd7Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+  <!-- bootstrap icons -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <!-- Bootstrap JS -->
+  <link rel="stylesheet" href="../assets/js/bootstrap.bundle.min.js" />
 
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <body>
-    <!-- Toggle Button -->
-    <div class="toggle-btn" id="toggleBtn">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+  <!-- Toggle Button -->
+  <!-- Sidebar Toggle Button -->
+  <div class="toggle-btn" id="toggleBtn">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="./assets/logo.png" alt="Logo" />
+    </div>
+    <ul>
+      <li>
+        <a href="../index.html">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="order-list.html">
+          <i class="fas fa-box"></i>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="../budget/budget-list.html">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <span>Budget</span>
+        </a>
+      </li>
+      <li>
+        <a href="../planning/planning-list.html">
+          <i class="fas fa-palette"></i>
+          <span>Planning</span>
+        </a>
+      </li>
+      <li>
+        <a href="../billing/billing-list.html">
+          <i class="fas fa-credit-card"></i>
+          <span>Billing</span>
+        </a>
+      </li>
+      <li>
+        <a href="../purchase-orders/purchase-order-list.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Purchase Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="../user-creation/user-list.html">
+          <i class="fas fa-users"></i>
+          <span>Users</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="../t&a/t&a.html">
+          <i class="fas fa-credit-card"></i>
+          <span>T & A</span>
+        </a>
+      </li>
+      <li>
+        <a href="./logs/logs.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Reports</span>
+        </a>
+      </li>
+      <li>
+        <a href="../suppliers/supplier-list.html">
+          <i class="fas fa-chart-line"></i>
+          <span>Suppliers</span>
+        </a>
+      </li>
+      <li>
+        <a href="./roles/roles.html">
+          <i class="fas fa-cogs"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+
+      <!-- Submenu -->
+      <li class="has-submenu">
+        <a href="#" class="submenu-toggle">
+          <i class="fas fa-layer-group"></i>
+          <span>Masters</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </a>
+        <ul class="submenu">
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-ruler-combined"></i>
+              <span>Sizes</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-fill-drip"></i>
+              <span>Colors</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-user-tag"></i>
+              <span>Buyers</span>
+            </a>
+          </li>
+          <li>
+            <a href="./payment/payment.html">
+              <i class="fas fa-calendar-alt"></i>
+              <span>Seasons</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="mainContent" class="main-content">
+    <!-- Header -->
+
+    <div id="mainHeader"
+      class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm w-100">
+      <h4 class="fw-bold mb-0">New Order</h4>
+      <div>
+        <i id="notificationBell" class="bi bi-bell fs-4 me-3" style="cursor: pointer"></i>
+        <i id="profileIcon" class="bi bi-person-circle fs-4" style="cursor: pointer"></i>
+      </div>
     </div>
 
-    <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar">
-      <div class="sidebar-logo">
-        <img src="./assets/logo.png" alt="Logo" />
-      </div>
-      <ul>
-        <li>
-          <a href="../index.html">
-            <i class="fas fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="./order-list.html">
-            <i class="fas fa-box"></i>
-            <span>Orders</span>
-          </a>
-        </li>
-        <li>
-          <a href="../budget/budget-list.html">
-            <i class="fas fa-file-invoice-dollar"></i>
-            <span>Budget</span>
-          </a>
-        </li>
-        <li>
-          <a href="../planning/planning-list.html">
-            <i class="fas fa-palette"></i>
-            <span>Planning</span>
-          </a>
-        </li>
-        <li>
-          <a href="./orders/order.html">
-            <i class="fas fa-credit-card"></i>
-            <span>Billing</span>
-          </a>
-        </li>
-        <li>
-          <a href="./logs/logs.html">
-            <i class="fas fa-chart-line"></i>
-            <span>Reports</span>
-          </a>
-        </li>
-        <li>
-          <a href="./roles/roles.html">
-            <i class="fas fa-cogs"></i>
-            <span>Settings</span>
-          </a>
-        </li>
-        <li class="has-submenu">
-          <a href="#" class="submenu-toggle">
-            <i class="fas fa-layer-group"></i>
-            <span>Masters</span>
-            <i class="fas fa-chevron-down arrow"></i>
-          </a>
-          <ul class="submenu">
-            <li>
-              <a href="./payment/payment.html">
-                <i class="fas fa-ruler-combined"></i>
-                <span>Sizes</span>
-              </a>
-            </li>
-            <li>
-              <a href="./payment/payment.html">
-                <i class="fas fa-fill-drip"></i>
-                <span>Colors</span>
-              </a>
-            </li>
-            <li>
-              <a href="./payment/payment.html">
-                <i class="fas fa-user-tag"></i>
-                <span>Buyers</span>
-              </a>
-            </li>
-            <li>
-              <a href="./payment/payment.html">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Seasons</span>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main id="mainContent" class="main-content">
-      <!-- Header -->
-      <!-- Header -->
-      <div
-        id="mainHeader"
-        class="header d-flex justify-content-between align-items-center px-4 py-2 bg-white border-bottom shadow-sm w-100"
-      >
-        <h4 class="fw-bold mb-0">New Order</h4>
-        <div>
-          <i
-            id="notificationBell"
-            class="bi bi-bell fs-4 me-3"
-            style="cursor: pointer"
-          ></i>
-          <i
-            id="profileIcon"
-            class="bi bi-person-circle fs-4"
-            style="cursor: pointer"
-          ></i>
+    <!-- Order Creation Form -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h2 class="mb-4">Order Creation</h2>
+          <form class="row g-4">
+            <div class="col-md-6">
+              <label for="orderNumber" class="form-label">
+                Order #
+                <span class="text-danger">*</span>
+              </label>
+              <input type="text" class="form-control" id="orderNumber" placeholder="Enter Order Number" required />
+            </div>
+            <div class="col-md-6">
+              <label for="refNumber" class="form-label">
+                Ref #
+                <small class="text-muted">(auto)</small>
+              </label>
+              <input type="text" class="form-control" id="refNumber" placeholder="Auto generated" disabled />
+            </div>
+            <div class="col-md-6">
+              <label for="buyerSelect" class="form-label">
+                Buyer
+                <span class="text-danger">*</span>
+              </label>
+              <div class="d-flex gap-2">
+                <select class="form-select" id="buyerSelect" required>
+                  <option value="">Select Buyer</option>
+                  <option>Buyer 1</option>
+                  <option>Buyer 2</option>
+                </select>
+                <button type="button" class="btn btn-warning btn-add" title="Add New Buyer">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="country" class="form-label">Country</label>
+              <input type="text" class="form-control" id="country" placeholder="Enter Country" />
+            </div>
+            <div class="col-md-6">
+              <label for="buyerCode" class="form-label">Buyer Code</label>
+              <input type="text" class="form-control" id="buyerCode" placeholder="Enter Buyer Code" />
+            </div>
+            <div class="col-md-6">
+              <label for="seasonSelect" class="form-label">
+                Season
+                <span class="text-danger">*</span>
+              </label>
+              <div class="d-flex gap-2">
+                <select class="form-select" id="seasonSelect" required>
+                  <option value="">Select Season</option>
+                  <option>Spring</option>
+                  <option>Summer</option>
+                  <option>Fall</option>
+                  <option>Winter</option>
+                </select>
+                <button type="button" class="btn btn-warning btn-add" title="Add New Season">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
+    </div>
 
-      <!-- Order Creation Form -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm mt-4">
-          <div class="card-body">
-            <h2 class="mb-4">Order Creation</h2>
-            <form class="row g-4">
+    <!-- Order Delivery Details -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h2 class="mb-4">Order Delivery Details</h2>
+          <div id="orderRowContainer">
+            <div class="row mb-3 order-row">
               <div class="col-md-6">
-                <label for="orderNumber" class="form-label"
-                  >Order # <span class="text-danger">*</span></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="orderNumber"
-                  placeholder="Enter Order Number"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="refNumber" class="form-label"
-                  >Ref # <small class="text-muted">(auto)</small></label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="refNumber"
-                  placeholder="Auto generated"
-                  disabled
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="buyerSelect" class="form-label"
-                  >Buyer <span class="text-danger">*</span></label
-                >
+                <label for="orderTypeSelect" class="form-label">
+                  Order Type
+                  <span class="text-danger">*</span>
+                </label>
                 <div class="d-flex gap-2">
-                  <select class="form-select" id="buyerSelect" required>
-                    <option value="">Select Buyer</option>
-                    <option>Buyer 1</option>
-                    <option>Buyer 2</option>
+                  <select id="orderTypeSelect" class="form-select order-select" required>
+                    <option value="">Select Order Type</option>
+                    <option>Sample</option>
+                    <option>Bulk</option>
                   </select>
-                  <button
-                    type="button"
-                    class="btn btn-warning btn-add"
-                    title="Add New Buyer"
-                  >
+                  <button type="button" class="btn btn-warning btn-add" title="Add New Order Type"
+                    data-bs-toggle="modal" data-bs-target="#addOrderTypeModal">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="country" class="form-label">Country</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="country"
-                  placeholder="Enter Country"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="buyerCode" class="form-label">Buyer Code</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="buyerCode"
-                  placeholder="Enter Buyer Code"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="seasonSelect" class="form-label"
-                  >Season <span class="text-danger">*</span></label
-                >
+                <label for="orderDate" class="form-label">
+                  Delivery Date
+                  <span class="text-danger">*</span>
+                </label>
                 <div class="d-flex gap-2">
-                  <select class="form-select" id="seasonSelect" required>
-                    <option value="">Select Season</option>
-                    <option>Spring</option>
-                    <option>Summer</option>
-                    <option>Fall</option>
-                    <option>Winter</option>
-                  </select>
-                  <button
-                    type="button"
-                    class="btn btn-warning btn-add"
-                    title="Add New Season"
-                  >
+                  <input type="date" class="form-control order-date" required />
+                  <button type="button" class="btn btn-success btn-add-row" title="Add New Date">
                     <i class="fas fa-plus"></i>
                   </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Order Delivery Details -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm mt-4">
-          <div class="card-body">
-            <h2 class="mb-4">Order Delivery Details</h2>
-            <div id="orderRowContainer">
-              <div class="row mb-3 order-row">
-                <div class="col-md-6">
-                  <label for="orderTypeSelect" class="form-label"
-                    >Order Type <span class="text-danger">*</span></label
-                  >
-                  <div class="d-flex gap-2">
-                    <select
-                      id="orderTypeSelect"
-                      class="form-select order-select"
-                      required
-                    >
-                      <option value="">Select Order Type</option>
-                      <option>Sample</option>
-                      <option>Bulk</option>
-                    </select>
-                    <button
-                      type="button"
-                      class="btn btn-warning btn-add"
-                      title="Add New Order Type"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addOrderTypeModal"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <label for="orderDate" class="form-label"
-                    >Order Date <span class="text-danger">*</span></label
-                  >
-                  <div class="d-flex gap-2">
-                    <input
-                      type="date"
-                      class="form-control order-date"
-                      required
-                    />
-                    <button
-                      type="button"
-                      class="btn btn-success btn-add-row"
-                      title="Add New Date"
-                    >
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Order Entry -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm mt-4">
-          <div class="card-body">
-            <h2 class="mb-4">Order Entry</h2>
-            <form class="row g-4">
-              <div class="col-md-6">
-                <label for="styleNumber" class="form-label">Style #</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="styleNumber"
-                  placeholder="Enter style #"
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="stylePicture" class="form-label"
-                  >Style Picture</label
-                >
-                <input
-                  type="file"
-                  class="form-control"
-                  id="stylePicture"
-                  accept="image/*"
-                  onchange="previewImage(event)"
-                />
-                <div
-                  id="imagePreviewContainer"
-                  class="mt-3"
-                  style="display: none"
-                >
-                  <label class="form-label">Preview:</label>
-                  <div
-                    class="border rounded-4 p-2 shadow-sm"
-                    style="max-width: 200px; height: 200px; overflow: hidden"
-                  >
-                    <img
-                      id="imagePreview"
-                      src="#"
-                      alt="Preview"
-                      class="img-fluid rounded-3 h-100 w-100"
-                      style="object-fit: cover"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <label for="description" class="form-label">Description</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="description"
-                  placeholder="Add Description"
-                />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Price and Details -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm mt-4">
-          <div class="card-body">
-            <div class="row g-4">
-              <div class="col-md-6">
-                <label for="priceAmount" class="form-label"
-                  >Price <span class="text-danger">*</span></label
-                >
-                <div class="d-flex">
-                  <input
-                    type="number"
-                    step="0.01"
-                    class="form-control me-2"
-                    id="priceAmount"
-                    placeholder="Enter Price Amount"
-                    required
-                  />
-                  <select
-                    class="form-select"
-                    style="max-width: 100px"
-                    id="currencySelect"
-                    required
-                  >
-                    <option value="USD" selected>USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="INR">INR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="JPY">JPY</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label for="colorSelect" class="form-label"
-                  >Color <span class="text-danger">*</span></label
-                >
-                <div class="d-flex gap-2">
-                  <select class="form-select" id="colorSelect" required>
-                    <option value="">Select Color</option>
-                    <option>Red</option>
-                    <option>Green</option>
-                    <option>Blue</option>
-                    <option>Black</option>
-                    <option>White</option>
-                  </select>
-                  <button
-                    type="button"
-                    class="btn btn-warning btn-add"
-                    title="Add New Color"
-                  >
-                    <i class="fas fa-plus"></i>
-                  </button>
+    <!-- Order Entry -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h2 class="mb-4">Order Entry</h2>
+          <form class="row g-4">
+            <div class="col-md-6">
+              <label for="styleNumber" class="form-label">Style #</label>
+              <input type="text" class="form-control" id="styleNumber" placeholder="Enter style #" />
+            </div>
+            <div class="col-md-6">
+              <label for="stylePicture" class="form-label">Style Picture</label>
+              <input type="file" class="form-control" id="stylePicture" accept="image/*"
+                onchange="previewImage(event)" />
+              <div id="imagePreviewContainer" class="mt-3" style="display: none">
+                <label class="form-label">Preview:</label>
+                <div class="border rounded-4 p-2 shadow-sm" style="max-width: 200px; height: 200px; overflow: hidden">
+                  <img id="imagePreview" src="#" alt="Preview" class="img-fluid rounded-3 h-100 w-100"
+                    style="object-fit: cover" />
                 </div>
               </div>
             </div>
 
-            <div class="row g-4 mt-3">
-              <div class="col-md-4">
-                <label for="size" class="form-label"
-                  >Size <span class="text-danger">*</span></label
-                >
-                <select class="form-select" id="size" required>
-                  <option value="">Select Size</option>
-                  <option value="XS">XS</option>
-                  <option value="S">S</option>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
+            <div class="col-md-6">
+              <label for="priceAmount" class="form-label">
+                Price
+                <span class="text-danger">*</span>
+              </label>
+              <div class="d-flex">
+                <input type="number" step="0.01" class="form-control me-2" id="priceAmount"
+                  placeholder="Enter Price Amount" required />
+                <select class="form-select" style="max-width: 100px" id="currencySelect" required>
+                  <option value="USD" selected>USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="INR">INR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="JPY">JPY</option>
                 </select>
               </div>
-              <div class="col-md-4">
-                <label for="qty" class="form-label"
-                  >Qty <span class="text-danger">*</span></label
-                >
-                <input
-                  type="number"
-                  class="form-control"
-                  id="qty"
-                  placeholder="Enter Quantity"
-                  min="1"
-                  required
-                />
-              </div>
-              <div class="col-md-4">
-                <label for="excessQty" class="form-label">Excess Qty</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="excessQty"
-                  placeholder="Enter Excess Qty"
-                  min="0"
-                />
-              </div>
             </div>
+            <div class="col-6">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Add Description" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
-            <div class="col-12 mt-4">
-              <button
-                type="button"
-                class="btn btn-success btn-lg"
-                onclick="addToOrderTable()"
-              >
-                Save Item
-              </button>
-            </div>
+    <!-- clr,qty,size,excess Qty       -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <!-- Container for rows -->
+          <div id="formRows">
+            <div class="row g-4 align-items-end mb-2 form-row">
+              <div class="col-md-3">
+                <label class="form-label">
+                  Color
+                  <span class="text-danger">*</span>
+                </label>
+                <select class="form-select" required>
+                  <option value="">Select Color</option>
+                  <option>Red</option>
+                  <option>Green</option>
+                  <option>Blue</option>
+                  <option>Black</option>
+                  <option>White</option>
+                </select>
+              </div>
 
-            <div
-              id="successAlert"
-              class="alert alert-success alert-dismissible fade show mt-3 d-none"
-              role="alert"
-            >
-              Item added successfully!
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
+              <div class="col-md-3">
+                <label class="form-label">
+                  Size
+                  <span class="text-danger">*</span>
+                </label>
+                <select class="form-select" required>
+                  <option value="">Select Size</option>
+                  <option>XS</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                  <option>XXL</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">
+                  Qty
+                  <span class="text-danger">*</span>
+                </label>
+                <input type="number" class="form-control" placeholder="Enter Quantity" min="1" required />
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Excess Qty</label>
+                <input type="number" class="form-control" placeholder="Enter Excess Qty" min="0" />
+              </div>
+
+              <div class="col-md-1 d-flex justify-content-end align-items-end">
+                <button type="button"
+                  class="btn btn-warning d-flex justify-content-center align-items-center shadow-sm rounded-3"
+                  style="width: 45px; height: 45px" onclick="addRow(this)" title="Add Row">
+                  <i class="fa fa-plus text-white"></i>
+                </button>
+              </div>
+              <div class="col-md-1 d-flex justify-content-end align-items-end">
+                <button type="button"
+                  class="btn btn-danger d-flex justify-content-center align-items-center shadow-sm rounded-3 p-0"
+                  style="width: 45px; height: 45px" onclick="removeRow(this)" title="Remove Row">
+                  <i class="fa fa-minus text-white fs-5"></i>
+                </button>
+              </div>
             </div>
+          </div>
+
+          <div class="col-12 mt-4">
+            <button type="button" class="btn btn-success btn-lg" onclick="addToOrderTable()">Save Item</button>
+          </div>
+
+          <div id="successAlert" class="alert alert-success alert-dismissible fade show mt-3 d-none" role="alert">
+            Item added successfully!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Order Items Table -->
-      <div class="container-fluid px-3">
-        <div class="card shadow-sm mt-4">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <h5 class="mb-0 order-items-header">Order Items</h5>
-            </div>
-            <div class="table-responsive mt-3">
-              <table class="table table-bordered text-center">
-                <thead class="table-light">
-                  <tr>
-                    <th>S.No</th>
-                    <th>Image</th>
-                    <th>Style #</th>
-                    <th>Description</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Qty</th>
-                    <th>Excess Qty</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody id="orderTableBody"></tbody>
-              </table>
-            </div>
+    <!-- Order Items Table -->
+    <div class="container-fluid px-3">
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 order-items-header">Order Items</h5>
+          </div>
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th>S.No</th>
+                  <th>Image</th>
+                  <th>Style #</th>
+                  <th>Description</th>
+                  <th>Color</th>
+                  <th>Size</th>
+                  <th>Qty</th>
+                  <th>Excess Qty</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="orderTableBody"></tbody>
+            </table>
+          </div>
 
-            <div class="col-12 mt-4">
-              <button
-                type="button"
-                class="btn btn-success btn-lg"
-                onclick="createOrder()"
-              >
-                Create Order
-              </button>
-            </div>
+          <div class="col-12 mt-4">
+            <button type="button" class="btn btn-success btn-lg" onclick="createOrder()">Create Order</button>
+          </div>
 
-            <div
-              id="createOrderAlert"
-              class="alert alert-success alert-dismissible fade show mt-3 d-none"
-              role="alert"
-            >
-              Order created successfully!
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
-            </div>
+          <div id="createOrderAlert" class="alert alert-success alert-dismissible fade show mt-3 d-none" role="alert">
+            Order created successfully!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script>
-      let serial = 1;
+  <script>
+    let serial = 1;
 
-      function previewImage(event) {
-        const file = event.target.files[0];
-        if (!file) return;
+    function previewImage(event) {
+      const file = event.target.files[0];
+      if (!file) return;
 
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const previewContainer = document.getElementById(
-            "imagePreviewContainer"
-          );
-          const preview = document.getElementById("imagePreview");
-          preview.src = e.target.result;
-          previewContainer.style.display = "block";
-        };
-        reader.readAsDataURL(file);
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const previewContainer = document.getElementById('imagePreviewContainer');
+        const preview = document.getElementById('imagePreview');
+        preview.src = e.target.result;
+        previewContainer.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function addToOrderTable() {
+      const styleNumber = document.getElementById('styleNumber').value.trim();
+      const stylePicture = document.getElementById('stylePicture').files[0];
+      const description = document.getElementById('description').value.trim();
+      const color = document.getElementById('colorSelect').value;
+      const size = document.getElementById('size').value;
+      const qty = document.getElementById('qty').value;
+      const excessQty = document.getElementById('excessQty').value || '0';
+
+      if (!styleNumber || !stylePicture || !color || !size || !qty) {
+        alert('Please fill all required fields.');
+        return;
       }
 
-      function addToOrderTable() {
-        const styleNumber = document.getElementById("styleNumber").value.trim();
-        const stylePicture = document.getElementById("stylePicture").files[0];
-        const description = document.getElementById("description").value.trim();
-        const color = document.getElementById("colorSelect").value;
-        const size = document.getElementById("size").value;
-        const qty = document.getElementById("qty").value;
-        const excessQty = document.getElementById("excessQty").value || "0";
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const tableBody = document.getElementById('orderTableBody');
 
-        if (!styleNumber || !stylePicture || !color || !size || !qty) {
-          alert("Please fill all required fields.");
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const tableBody = document.getElementById("orderTableBody");
-
-          const row = document.createElement("tr");
-          row.innerHTML = `
+        const row = document.createElement('tr');
+        row.innerHTML = `
         <td>${serial++}</td>
-        <td><img src="${
-          e.target.result
-        }" width="50" height="50" style="object-fit:cover;" /></td>
+        <td><img src="${e.target.result}" width="50" height="50" style="object-fit:cover;" /></td>
         <td>${styleNumber}</td>
         <td>${description}</td>
         <td>${color}</td>
@@ -588,27 +481,27 @@
         <td><button class="btn btn-sm btn-danger" onclick="this.closest('tr').remove()">Delete</button></td>
       `;
 
-          tableBody.appendChild(row);
+        tableBody.appendChild(row);
 
-          // Clear fields
-          document.querySelector("form").reset();
-          document.getElementById("imagePreviewContainer").style.display =
-            "none";
-        };
+        // Clear fields
+        document.querySelector('form').reset();
+        document.getElementById('imagePreviewContainer').style.display = 'none';
+      };
 
-        reader.readAsDataURL(stylePicture);
-      }
-    </script>
+      reader.readAsDataURL(stylePicture);
+    }
+  </script>
 
-    <script src="../script.js"></script>
-    <script src="./order.js"></script>
+  <script src="../script.js"></script>
+  <script src="./order.js"></script>
 
-    <script>
-      function showAlert() {
-        const alert = document.getElementById("successAlert");
-        alert.classList.remove("d-none");
-        setTimeout(() => alert.classList.add("d-none"), 3000);
-      }
-    </script>
-  </body>
+  <script>
+    function showAlert() {
+      const alert = document.getElementById('successAlert');
+      alert.classList.remove('d-none');
+      setTimeout(() => alert.classList.add('d-none'), 3000);
+    }
+  </script>
+</body>
+
 </html>

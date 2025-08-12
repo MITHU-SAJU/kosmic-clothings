@@ -53,4 +53,26 @@
   }
 
 
-  
+    function addRow(button) {
+    const currentRow = button.closest('.form-row');
+    const clone = currentRow.cloneNode(true);
+
+    // Reset input values in the new row
+    clone.querySelectorAll('input, select').forEach(input => {
+      input.value = '';
+    });
+
+    // Append cloned row after the current one
+    currentRow.parentNode.insertBefore(clone, currentRow.nextSibling);
+  }
+
+
+  function removeRow(button) {
+  const row = button.closest('.row');
+  const parent = row.parentNode;
+  if (parent.children.length > 1) {
+    parent.removeChild(row);
+  } else {
+    alert("At least one row must remain.");
+  }
+}
