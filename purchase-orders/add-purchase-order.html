@@ -69,6 +69,12 @@
                 </a>
             </li>
             <li>
+                <a href="../deliveryChallan/delevery-list.html">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Delivery Challan</span>
+                </a>
+            </li>
+            <li>
                 <a href="../user-creation/user-list.html">
                     <i class="fas fa-users"></i>
                     <span>Users</span>
@@ -304,18 +310,6 @@
                                         </select>
                                     </div>
 
-                                    <!-- Size Dropdown -->
-                                    <div class="col-md">
-                                        <label class="form-label">Size</label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Size</option>
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
                                     <!-- Item Type Dropdown -->
                                     <div class="col-md">
                                         <label class="form-label">Item Type</label>
@@ -338,6 +332,16 @@
                                             <option>Print & Embroidery</option>
                                         </select>
                                     </div>
+                                    <div class="col-md">
+                                        <label class="form-label">PROCESS</label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Order</option>
+                                            <option>Fabric</option>
+                                            <option>CMT</option>
+                                            <option>Store</option>
+                                            <option>Print & Embroidery</option>
+                                        </select>
+                                    </div>
 
                                     <!-- Add Button -->
                                     <div class="col-md-auto">
@@ -348,6 +352,7 @@
                                         </button>
                                     </div>
 
+
                                     <table class="table table-bordered align-middle shadow-sm">
                                         <thead class="text-center table-light">
                                             <tr>
@@ -356,49 +361,24 @@
                                                 <th>Particulars</th>
                                                 <th>Size</th>
                                                 <th>QTY / PCS</th>
+                                                <th>Excess Qty</th>
                                                 <th>Rate</th>
                                                 <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody class="text-center">
-                                            <!-- First item group -->
                                             <tr>
-                                                <td rowspan="3">1</td> <!-- Merge for all particulars -->
-                                                <td rowspan="3">PB-DD-16</td>
+                                                <td>1</td>
+                                                <td>PB-DD-16</td>
                                                 <td class="text-start">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="yarn">
-                                                        <label class="form-check-label" for="yarn">Yarn</label>
-                                                    </div>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Particulars">
                                                 </td>
                                                 <td>L</td>
                                                 <td>200</td>
+                                                <td>10</td>
                                                 <td>0.50</td>
-                                                <td>100</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="knitting">
-                                                        <label class="form-check-label" for="knitting">Knitting</label>
-                                                    </div>
-                                                </td>
-                                                <td>L</td>
-                                                <td>300</td>
-                                                <td>0.75</td>
-                                                <td>225</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-start">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="dyeing">
-                                                        <label class="form-check-label" for="dyeing">Dyeing</label>
-                                                    </div>
-                                                </td>
-                                                <td>M</td>
-                                                <td>200</td>
-                                                <td>0.60</td>
-                                                <td>120</td>
+                                                <td>105</td>
                                             </tr>
                                         </tbody>
                                     </table>
